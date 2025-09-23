@@ -35,3 +35,20 @@ out/
 
 ### VS Code ###
 .vscode/
+# Java logs
+*.log
+
+# Spring Boot / Maven / Gradle files
+target/
+*.class
+*.jar
+*.war
+
+# Keycloak temp files (if any)
+standalone/tmp/
+standalone/data/
+
+# Docker related files (optional)
+docker-compose.override.yml
+
+# IntelliJ / VS Code / Eclipse already covered
