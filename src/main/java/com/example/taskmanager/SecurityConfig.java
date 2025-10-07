@@ -12,11 +12,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .anyRequest().authenticated()
+                .requestMatchers("/tasks/**").authenticated() // Only logged-in users access /tasks
+                .anyRequest().permitAll()
             )
-            .oauth2Login(oauth2 -> oauth2
-                .defaultSuccessUrl("/", true)
-            );
+            .oauth2Login();
         return http.build();
     }
 }
